@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 -- Active: 1747412854240@@localhost@5432@conservation_db_b5a2
 
 SELECT * FROM rangers;
