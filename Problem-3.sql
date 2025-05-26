@@ -4,6 +4,3 @@ SELECT * FROM sightings;
 
 SELECT * FROM  sightings
 WHERE LOCATION LIKE '%Africa%';
-
-SELECT * FROM  sightings
-WHERE LOCATION LIKE '%America%';

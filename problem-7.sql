@@ -5,7 +5,7 @@ SELECT * FROM species
 
 UPDATE species
 SET conservation_status = 'Historic'
-WHERE EXTRACT(discovery_date) < 1800;
+WHERE EXTRACT(YEAR FROM discovery_date) < 1800;
 
 
 
