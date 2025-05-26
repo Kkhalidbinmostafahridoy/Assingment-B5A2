@@ -1,0 +1,102 @@
+                            Question 1 :
+
+Ans: 
+PostgreSQL is a world most powerful, open-source object-relational database management system (ORDBMS). It is widely used for storing, managing, and retrieving structured data.
+
+
+
+                            Question 3:
+
+Ans:
+
+Primary key :
+
+1. A Primary Key uniquely identifies each record in a database table.
+2. A table can have only one Primary Key, which may consist of one or multiple columns.
+3. Primary Keys cannot contain NULL values.
+4. Each value in a Primary Key column must be unique.
+
+
+Foreign key :
+
+1. A Foreign Key is a field in one table that refers to the Primary Key in another table.
+2. Foreign Keys establish relationships between two tables in a relational database.
+3. A table can have multiple Foreign Keys, each linking to a different parent table.
+4. Foreign Keys can contain duplicate values and NULLs (unless restricted by constraints).
+5. The use of Foreign Keys helps maintain referential integrity in the database.
+
+
+
+                         Question 4 
+
+Ans:
+
+VARCHAR :
+
+1. Variable-Length: VARCHAR stores strings of varying lengths efficiently without wasting space.
+2. Max Length: It can store up to 1 GB of text, though practical limits are often much lower.
+3. Optional Length Limit: You can define a maximum length like VARCHAR(50), or omit it (same as TEXT).
+4. No Padding: Unlike CHAR, it does not pad strings with spaces.
+5. Case-Sensitive: String comparisons are case-sensitive by default.
+6. Supports Unicode: Can store Unicode characters, making it suitable for multilingual text.
+7. NULL Allowed: VARCHAR columns can store NULL values.
+8. Indexable: It supports indexing, making it efficient for searches and filters.
+9. Common Usage: Ideal for fields like names, emails, and descriptions with variable text length.
+10. Text Functions: Works with string functions (LENGTH(), LOWER(), LIKE, etc.) for text manipulation.
+
+
+CHAR :
+
+1. Fixed-Length: CHAR(n) stores strings of a fixed length n, padding with spaces if the input is shorter.
+2. Padding Behavior: Extra spaces are added automatically to match the defined length.
+3. Efficient for Uniform Data: Best suited for data that has a consistent length, such as fixed-size codes.
+4. Case-Sensitive: String comparisons are case-sensitive by default.
+5. NULL Allowed: CHAR columns can store NULL values.
+6. Indexable: Supports indexing for faster lookups and filtering.
+7. Common Usage: Ideal for storing fixed-length values like country codes, status flags, or short IDs.
+8. Text Functions Support: Compatible with standard text functions like LENGTH(), LOWER(), and LIKE.
+
+
+                            Question 8
+
+Ans:
+The JOIN operation is one of the most important features in PostgreSQL (and all relational databases). It allows you to combine data from multiple tables based on a related column, usually a foreign key to primary key relationship.
+
+1. INNER JOIN
+INNER JOIN returns only the rows that have matching values in both tables involved in the join.It is the most commonly used join type in relational databases.When using INNER JOIN, unmatched rows from either table are excluded from the result set.This join is efficient when you only need related records between two tables.
+
+2. LEFT JOIN
+LEFT JOIN or LEFT OUTER JOIN returns all rows from the left table, along with the matching rows from the right table.If there is no match in the right table, the result will contain NULL values for the right table’s columns.It is useful when you want to include all records from the left table, regardless of whether a match exists.
+LEFT JOIN is helpful for identifying unmatched or orphaned records.
+
+3. RIGHT JOIN
+RIGHT JOIN or RIGHT OUTER JOIN is the opposite of LEFT JOIN.
+It returns all rows from the right table and the matched rows from the left table.If there is no match in the left table, the result includes NULL values for the left table’s columns.This join is used when you need all records from the right table, with or without matching left-side data.
+
+4. FULL OUTER JOIN
+CROSS JOIN produces the Cartesian product of the two tables.
+Every row from the first table is combined with every row from the second table.It is rarely used except in cases where all possible combinations are needed, such as testing or generating combinations.
+
+5. SELF JOIN
+SELF JOIN is a join where a table is joined with itself.
+It is useful for hierarchical relationships within the same table, such as employee-manager structures.To perform a self join, table aliases are used to differentiate the instances of the same table.
+
+
+                        Qestion 7
+
+Ans:
+In PostgreSQL, you can modify existing data in a table using the UPDATE statement. It allows you to change the values of one or more columns for rows that match a specified condition.
+
+Here are the key points about the UPDATE statement in PostgreSQL:
+
+1. Syntax: The basic syntax of the UPDATE statement is:
+UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;
+2. Updating Multiple Columns: You can update multiple columns in a single UPDATE statement by separating them with commas in the SET clause.
+3. Updating All Rows: If you want to update all rows in a table, you can omit the WHERE clause. This will apply the changes to every row.
+4. Updating Specific Rows: To update specific rows, include a WHERE clause that defines the condition. Only the rows matching the condition will be updated.
+5. Using Subqueries: Subqueries can be used in the SET clause or WHERE clause to dynamically update values based on other data in the database.
+6. Transaction Support: UPDATE statements can be part of a transaction (BEGIN, COMMIT, ROLLBACK) to ensure data integrity. You can roll back changes if an error occurs.
+7. Indexing: Updating indexed columns is generally faster and more efficient, especially when the WHERE condition uses the indexed column.
+8. Common Usage: UPDATE is commonly used to modify user details, change order statuses, update product pricing, or fix incorrect data entries.
+9. Performance Considerations: Large UPDATE operations can affect performance. It's best to batch updates or use transactions to control load.
+10. RETURNING Clause: PostgreSQL supports the RETURNING clause, which allows you to return updated rows directly after the update, useful for auditing or chaining operations.

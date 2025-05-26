@@ -4,7 +4,13 @@
 SELECT * FROM sightings;
 
 
-SELECT sighting_id
-FROM sightings
-Case 
-WHEN extract(HOUR FROM sighting_time)<12 'morning' THEN
+
+
+SELECT 
+    sighting_id,
+    CASE 
+        WHEN EXTRACT(HOUR FROM sighting_time) < 12 THEN 'Morning'
+        WHEN EXTRACT(HOUR FROM sighting_time) BETWEEN 12 AND 17 THEN 'Afternoon'
+        ELSE 'Evening'
+    END AS time_of_day
+FROM sightings;
